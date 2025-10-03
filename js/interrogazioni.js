@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwgmFVadr_CM55CVSmsV1Uy8V_e2OQ_905lHtiWjy8E-urtVhsEKyq6D4mn4fnvPlqwQA/exec"; // incolla qui l'URL Apps Script
+const API_URL = "https://script.google.com/macros/s/AKfycbzLNXDIbMAY3XVr6N4XWAqVglPhm42uIH5DCzCCFQ9ynryhySYZ0KXc69v4D76zfEsMlA/exec";
 
 // Funzione per generare le tabelle per ogni materia
 function generateTables(data) {

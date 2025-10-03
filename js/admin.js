@@ -1,7 +1,10 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwgmFVadr_CM55CVSmsV1Uy8V_e2OQ_905lHtiWjy8E-urtVhsEKyq6D4mn4fnvPlqwQA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzLNXDIbMAY3XVr6N4XWAqVglPhm42uIH5DCzCCFQ9ynryhySYZ0KXc69v4D76zfEsMlA/exec";
+
+let passwordCorretta = ""; // Verrà caricata dal server
+let modifichePerMateria = {}; // Tiene traccia delle modifiche non salvate per materia
 
 // 🔹 Controllo accesso: impedisce accesso diretto senza login
-if (localStorage.getItem("adminAccess") !== "true") {
+if (localStorage.getItem("osdnoi3223oi3nboin3p091u90123nksnofi") !== "true") {
     alert("Devi prima effettuare il login!");
     window.location.href = "login.html";
 }
@@ -11,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoutBtn = document.getElementById("logout-btn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("adminAccess");
+            localStorage.removeItem("osdnoi3223oi3nboin3p091u90123nksnofi");
             window.location.href = "login.html";
         });
     }
@@ -24,33 +27,37 @@ function generateAdminTables(data) {
 
     const materie = {};
 
+    // Organizza i dati per materia
     data.forEach(item => {
         const materia = item.Materia;
         const studente = item.Studente;
+        
         if (!materie[materia]) materie[materia] = [];
-        materie[materia].push({ nome: studente, interrogato: item.Interrogato === true });
+        materie[materia].push({ 
+            nome: studente, 
+            interrogato: item.Interrogato === true || item.Interrogato === "TRUE"
+        });
     });
 
+    // Crea una tabella per ogni materia
     for (const materia in materie) {
+        modifichePerMateria[materia] = []; // Inizializza array delle modifiche
+
         const divMateria = document.createElement("div");
         divMateria.className = "materia-block";
-        divMateria.style.marginBottom = "40px"; // spazio tra le tabelle
 
         const h2 = document.createElement("h2");
         h2.textContent = materia;
-        h2.style.marginBottom = "10px";
         divMateria.appendChild(h2);
 
         const table = document.createElement("table");
         table.className = "materia-table";
-        table.style.width = "100%";
-        table.style.borderCollapse = "collapse"; // per i bordi uniformi
 
         const thead = document.createElement("thead");
         thead.innerHTML = `
-            <tr style="background:#667eea; color:white;">
-                <th style="border: 1px solid #333; padding:8px;">Nome</th>
-                <th style="border: 1px solid #333; padding:8px;">Interrogato</th>
+            <tr>
+                <th>Nome</th>
+                <th style="text-align:center;">Interrogato</th>
             </tr>
         `;
         table.appendChild(thead);
@@ -59,22 +66,98 @@ function generateAdminTables(data) {
         materie[materia].forEach(s => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-                <td style="border: 1px solid #333; padding:8px;">${s.nome}</td>
-                <td style="border: 1px solid #333; text-align:center; padding:8px;">
-                    <input type="checkbox" ${s.interrogato ? "checked" : ""}>
+                <td>${s.nome}</td>
+                <td style="text-align:center;">
+                    <input type="checkbox" ${s.interrogato ? "checked" : ""} data-studente="${s.nome}" data-materia="${materia}">
                 </td>
             `;
             tbody.appendChild(tr);
 
+            // Gestisce il cambiamento dello stato delle checkbox
             const checkbox = tr.querySelector("input[type=checkbox]");
-            checkbox.addEventListener("change", async () => {
-                await updateSheetStatus(s.nome, materia, checkbox.checked);
+            checkbox.addEventListener("change", () => {
+                aggiungiModifica(s.nome, materia, checkbox.checked);
             });
         });
 
         table.appendChild(tbody);
         divMateria.appendChild(table);
+
+        // Bottone Salva
+        const saveBtn = document.createElement("button");
+        saveBtn.className = "save-button";
+        saveBtn.textContent = "Salva";
+        saveBtn.setAttribute("data-materia", materia);
+        saveBtn.addEventListener("click", () => salvaCambiamenti(materia));
+        divMateria.appendChild(saveBtn);
+
         listeContainer.appendChild(divMateria);
+    }
+}
+
+// 🔹 Aggiunge una modifica alla lista delle modifiche pendenti
+function aggiungiModifica(studente, materia, status) {
+    const modifiche = modifichePerMateria[materia];
+    
+    // Rimuove eventuali modifiche precedenti per lo stesso studente
+    const index = modifiche.findIndex(m => m.studente === studente);
+    if (index !== -1) {
+        modifiche.splice(index, 1);
+    }
+    
+    // Aggiunge la nuova modifica
+    modifiche.push({ studente, status });
+}
+
+// 🔹 Salva tutti i cambiamenti per una materia specifica
+async function salvaCambiamenti(materia) {
+    const modifiche = modifichePerMateria[materia];
+    
+    if (modifiche.length === 0) {
+        alert("Nessuna modifica da salvare per " + materia);
+        return;
+    }
+
+    // Richiede la password
+    const passwordInserita = prompt("Inserisci la password per confermare le modifiche:");
+    
+    if (!passwordInserita) {
+        alert("Operazione annullata");
+        return;
+    }
+
+    if (passwordInserita !== passwordCorretta) {
+        alert("❌ Password errata! Le modifiche non sono state salvate.");
+        return;
+    }
+
+    // Disabilita il bottone durante il salvataggio
+    const saveBtn = document.querySelector(`button[data-materia="${materia}"]`);
+    saveBtn.disabled = true;
+    saveBtn.textContent = "Salvataggio...";
+
+    try {
+        // Invia tutte le modifiche in sequenza
+        let salvateConSuccesso = 0;
+        for (const modifica of modifiche) {
+            const success = await updateSheetStatus(modifica.studente, materia, modifica.status);
+            if (success) {
+                salvateConSuccesso++;
+            }
+        }
+
+        if (salvateConSuccesso === modifiche.length) {
+            alert(`✅ Modifiche salvate con successo per ${materia}! (${salvateConSuccesso}/${modifiche.length})`);
+            modifichePerMateria[materia] = []; // Svuota le modifiche salvate
+        } else {
+            alert(`⚠️ Salvate ${salvateConSuccesso}/${modifiche.length} modifiche. Alcune potrebbero non essere state salvate.`);
+        }
+    } catch (err) {
+        console.error("Errore durante il salvataggio:", err);
+        alert("❌ Errore durante il salvataggio. Riprova.");
+    } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = "Salva";
     }
 }
 
@@ -82,10 +165,32 @@ function generateAdminTables(data) {
 async function updateSheetStatus(studente, materia, status) {
     try {
         const url = `${API_URL}?studente=${encodeURIComponent(studente)}&materia=${encodeURIComponent(materia)}&interrogato=${status}`;
-        await fetch(url);
+        const res = await fetch(url, { method: 'GET', redirect: 'follow' });
+
+        if (res.ok) {
+            console.log(`✅ Aggiornato: ${studente} (${materia}) -> ${status}`);
+            return true;
+        } else {
+            console.error(`❌ Errore aggiornamento: ${studente} (${materia})`);
+            return false;
+        }
     } catch (err) {
-        console.error("Errore aggiornamento:", err);
-        alert(`Errore aggiornamento per ${studente}`);
+        console.error(`❌ Errore fetch per ${studente} (${materia}):`, err);
+        return false;
+    }
+}
+
+// 🔹 Carica la password dal server
+async function caricaPassword() {
+    try {
+        const res = await fetch(`${API_URL}?action=getPwd`);
+        if (res.ok) {
+            const data = await res.json();
+            passwordCorretta = data.pwd;
+            console.log("✅ Password caricata dal server");
+        }
+    } catch (err) {
+        console.error("❌ Errore caricamento password:", err);
     }
 }
 
@@ -98,12 +203,16 @@ async function init() {
     errorDiv.style.display = "none";
 
     try {
+        // Carica prima la password
+        await caricaPassword();
+        
         const res = await fetch(API_URL);
         if (!res.ok) throw new Error("Errore rete");
 
         const data = await res.json();
         if (!data || data.length === 0) throw new Error("Nessun dato trovato");
 
+        console.log("Dati caricati:", data);
         generateAdminTables(data);
     } catch (err) {
         console.error("Errore caricamento:", err);
