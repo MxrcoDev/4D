@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Admin</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Schermata di Login -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1 class="login-title">🔐 Area Admin</h1>
+                <p class="login-subtitle">Inserisci il codice di accesso</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <input 
+                    type="password" 
+                    id="admin-code" 
+                    class="login-input" 
+                    placeholder="Codice Admin"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="login-button">Accedi</button>
+            </form>
+            
+            <div id="login-error" class="login-error" style="display: none;">
+                ⚠️ Codice non valido
+            </div>
+            
+            <a href="../index.html" class="back-link">← Torna alla Home</a>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

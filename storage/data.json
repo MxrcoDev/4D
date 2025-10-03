@@ -1,0 +1,181 @@
+{
+    "interrogazioni": [
+      {
+        "materia": "Informatica",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Sistemi e Reti",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "TPSIT",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Telecomunicazioni",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Storia",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Italiano",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Inglese",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      },
+      {
+        "materia": "Matematica",
+        "studenti": [
+          {"nome": "Alessandro", "interrogato": false},
+          {"nome": "Beatrice", "interrogato": false},
+          {"nome": "Carlo", "interrogato": false},
+          {"nome": "Daniela", "interrogato": false},
+          {"nome": "Elena", "interrogato": false},
+          {"nome": "Federico", "interrogato": false},
+          {"nome": "Giorgia", "interrogato": false},
+          {"nome": "Lorenzo", "interrogato": false},
+          {"nome": "Martina", "interrogato": false},
+          {"nome": "Niccolò", "interrogato": false},
+          {"nome": "Paolo", "interrogato": false},
+          {"nome": "Rebecca", "interrogato": false},
+          {"nome": "Simone", "interrogato": false},
+          {"nome": "Tommaso", "interrogato": false},
+          {"nome": "Valentina", "interrogato": false},
+          {"nome": "Vittoria", "interrogato": false},
+          {"nome": "Zeno", "interrogato": false}
+        ]
+      }
+    ]
+  }
+  
