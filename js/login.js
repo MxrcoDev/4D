@@ -1,5 +1,5 @@
 // login.js
-const ADMIN_HASH = "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08";
+const Z = "7e29bd59535b8f180bcecf39d38633d470df843d767834ea4dc75372c9a38a8b";
 
 function bufferToHex(buffer) {
   const bytes = new Uint8Array(buffer);
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const codeHash = await sha256Hex(code.trim());
 
-      if (codeHash === ADMIN_HASH) {
+      if (codeHash === Z) {
         localStorage.setItem("osdnoi3223oi3nboin3p091u90123nksnofi", "true");
         window.location.href = "admin.html";
       } else {

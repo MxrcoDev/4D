@@ -109,6 +109,54 @@ function aggiungiModifica(studente, materia, status) {
     modifiche.push({ studente, status });
 }
 
+// 🔹 Input password mascherato
+function richiediPassword() {
+    return new Promise((resolve) => {
+        // Crea overlay
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+        overlay.style.display = "flex";
+        overlay.style.alignItems = "center";
+        overlay.style.justifyContent = "center";
+        overlay.style.zIndex = 1000;
+
+        // Crea box
+        const box = document.createElement("div");
+        box.style.backgroundColor = "#fff";
+        box.style.padding = "20px";
+        box.style.borderRadius = "8px";
+        box.style.textAlign = "center";
+        box.innerHTML = `
+            <p>Inserisci la password:</p>
+            <input type="password" id="password-input" style="padding:5px; width:200px;">
+            <br><br>
+            <button id="password-ok">OK</button>
+            <button id="password-cancel">Annulla</button>
+        `;
+
+        overlay.appendChild(box);
+        document.body.appendChild(overlay);
+
+        // Gestione pulsanti
+        document.getElementById("password-ok").onclick = () => {
+            const val = document.getElementById("password-input").value;
+            document.body.removeChild(overlay);
+            resolve(val);
+        };
+        document.getElementById("password-cancel").onclick = () => {
+            document.body.removeChild(overlay);
+            resolve(null);
+        };
+
+        document.getElementById("password-input").focus();
+    });
+}
+
 // 🔹 Salva tutti i cambiamenti per una materia specifica
 async function salvaCambiamenti(materia) {
     const modifiche = modifichePerMateria[materia];
@@ -118,8 +166,8 @@ async function salvaCambiamenti(materia) {
         return;
     }
 
-    // Richiede la password
-    const passwordInserita = prompt("Inserisci la password per confermare le modifiche:");
+    // Usa input mascherato
+    const passwordInserita = await richiediPassword();
     
     if (!passwordInserita) {
         alert("Operazione annullata");
