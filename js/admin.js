@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzLNXDIbMAY3XVr6N4XWAqVglPhm42uIH5DCzCCFQ9ynryhySYZ0KXc69v4D76zfEsMlA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyWS-Sg6fLxM6vBf2jdCJo4TDMoIXeUAkLGHPr7c4t6nvUrU1VL2BiMqVs3bgbi1Bxb2g/exec";
 
 let passwordCorretta = ""; // Verrà caricata dal server
 let modifichePerMateria = {}; // Tiene traccia delle modifiche non salvate per materia

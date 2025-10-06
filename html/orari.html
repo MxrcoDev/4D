@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orario Scolastico</title>
+    <link rel="stylesheet" href="../css/orari.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="../index.html" class="back-button">
+                <span class="icon">←</span>
+                <span class="text">Home</span>
+            </a>
+            <h1 class="title">Orario Scolastico</h1>
+            <p class="subtitle">Visualizza l'orario delle lezioni settimanale</p>
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Caricamento orario...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <p>⚠️ Errore nel caricamento dell'orario</p>
+        </div>
+
+        <div id="orario-container" class="orario-container">
+            <!-- L'orario verrà generato dinamicamente qui -->
+        </div>
+    </div>
+
+    <script src="../js/orari.js"></script>
+</body>
+</html>

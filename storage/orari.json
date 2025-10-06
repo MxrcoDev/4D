@@ -1,0 +1,52 @@
+{
+    "Lunedì": {
+        "ora1": "Educazione Fisica",
+        "ora2": "Educazione Fisica",
+        "ora3": "Lab TPSIT",
+        "ora4": "Italiano",
+        "ora5": "LabTelecomunicazioni",
+        "ora6": "LabTelecomunicazioni",
+        "ora7": "-",
+        "ora8": "-"
+    },
+    "Martedì": {
+        "ora1": "Sistemi e Reti",
+        "ora2": "Italiano",
+        "ora3": "Matematica",
+        "ora4": "Sistemi e Reti",
+        "ora5": "Inglese",
+        "ora6": "Informatica",
+        "ora7": "-",
+        "ora8": "-"
+    },
+    "Mercoledì": {
+        "ora1": "Matematica",
+        "ora2": "Storia",
+        "ora3": "Informatica",
+        "ora4": "Matematica",
+        "ora5": "Inglese",
+        "ora6": "TPSIT",
+        "ora7": "Lab Sistemi e Reti",
+        "ora8": "Lab Sistemi e Reti"
+    },
+    "Giovedì": {
+        "ora1": "Telecomunicazioni",
+        "ora2": "Matematica",
+        "ora3": "Italiano",
+        "ora4": "Italiano",
+        "ora5": "Religione",
+        "ora6": "Informatica",
+        "ora7": "-",
+        "ora8": "-"
+    },
+    "Venerdì": {
+        "ora1": "Lab TPSIT",
+        "ora2": "Storia",
+        "ora3": "Lab Informatica",
+        "ora4": "Lab Informatica",
+        "ora5": "Inglese",
+        "ora6": "Lab Informatica",
+        "ora7": "-",
+        "ora8": "-"
+    }
+}

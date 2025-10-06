@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corso Java - Introduzione</title>
+    <link rel="stylesheet" href="../css/java.css">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-java.min.js"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span class="hamburger-icon">☰</span>
+        <span class="close-icon">✕</span>
+    </button>
+
+    <!-- Sidebar Index -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Indice del Corso</h3>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="index-list">
+                <li><a href="#intro" class="index-link active">Introduzione a Java</a></li>
+                <li><a href="#variabili" class="index-link">Variabili e Tipi di Dati</a></li>
+                <li><a href="#operatori" class="index-link">Operatori</a></li>
+                <li><a href="#controllo" class="index-link">Strutture di Controllo</a></li>
+                <li><a href="#classi" class="index-link">Classi e Oggetti</a></li>
+                <li><a href="#ereditarieta" class="index-link">Ereditarietà</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <a href="../index.html" class="back-button">
+                <span class="icon">←</span>
+                <span class="text">Home</span>
+            </a>
+            <div class="header-content">
+                <h1 class="title">Corso Java Completo</h1>
+                <p class="subtitle">Impara Java da zero con esempi pratici</p>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Sezione 1: Introduzione -->
+            <section class="course-section" id="intro">
+                <h2 class="section-title">Introduzione a Java</h2>
+                
+                <div class="text-content">
+                    <p>Java è un <strong>linguaggio di programmazione orientato agli oggetti</strong> sviluppato da Sun Microsystems (ora Oracle) nel 1995. È uno dei linguaggi più popolari al mondo grazie alla sua portabilità e robustezza.</p>
+                    
+                    <p>Le caratteristiche principali di Java includono:</p>
+                    <ul>
+                        <li><strong>Portabilità:</strong> "Write Once, Run Anywhere" - scrivi una volta, esegui ovunque</li>
+                        <li><strong>Orientato agli oggetti:</strong> tutto in Java è un oggetto</li>
+                        <li><strong>Sicuro:</strong> gestione automatica della memoria e controlli di sicurezza</li>
+                        <li><strong>Multithreading:</strong> supporto nativo per la programmazione concorrente</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Nota Importante</h4>
+                    <p>Il metodo <code>main</code> è il punto di ingresso di ogni applicazione Java. Senza di esso, il programma non può essere eseguito.</p>
+                </div>
+            </section>
+
+            <!-- Sezione 2: Variabili -->
+            <section class="course-section" id="variabili">
+                <h2 class="section-title">Variabili e Tipi di Dati</h2>
+                
+                <div class="text-content">
+                    <p>In Java, ogni variabile deve essere <em>dichiarata</em> con un tipo specifico prima di essere utilizzata. I tipi di dati primitivi includono:</p>
+                    
+                    <ul>
+                        <li><code>int</code> - numeri interi (32 bit)</li>
+                        <li><code>double</code> - numeri decimali (64 bit)</li>
+                        <li><code>boolean</code> - valori true/false</li>
+                        <li><code>char</code> - caratteri singoli</li>
+                        <li><code>String</code> - sequenze di caratteri (tipo riferimento)</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">// Dichiarazione di variabili
+int eta = 25;
+double altezza = 1.75;
+boolean isStudente = true;
+char iniziale = 'M';
+String nome = "Mario";
+
+// Costanti (final)
+final double PI = 3.14159;</code></pre>
+                </div>
+            </section>
+
+            <!-- Sezione 3: Operatori -->
+            <section class="course-section" id="operatori">
+                <h2 class="section-title">Operatori</h2>
+                
+                <div class="text-content">
+                    <p>Java supporta diversi tipi di operatori per eseguire operazioni su variabili e valori:</p>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">// Operatori aritmetici
+int somma = 10 + 5;        // 15
+int differenza = 10 - 5;   // 5
+int prodotto = 10 * 5;     // 50
+int divisione = 10 / 5;    // 2
+int resto = 10 % 3;        // 1
+
+// Operatori di confronto
+boolean uguale = (5 == 5);      // true
+boolean diverso = (5 != 3);     // true
+boolean maggiore = (10 > 5);    // true
+
+// Operatori logici
+boolean risultato = (true && false);  // false
+boolean oppure = (true || false);     // true
+boolean negazione = !true;            // false</code></pre>
+                </div>
+            </section>
+
+            <!-- Sezione 4: Strutture di Controllo -->
+            <section class="course-section" id="controllo">
+                <h2 class="section-title">Strutture di Controllo</h2>
+                
+                <div class="text-content">
+                    <p>Le strutture di controllo permettono di decidere quali istruzioni eseguire in base a determinate condizioni.</p>
+                    
+                    <h3>If-Else Statement</h3>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">int voto = 85;
+
+if (voto >= 90) {
+    System.out.println("Eccellente!");
+} else if (voto >= 75) {
+    System.out.println("Buono");
+} else if (voto >= 60) {
+    System.out.println("Sufficiente");
+} else {
+    System.out.println("Insufficiente");
+}</code></pre>
+                </div>
+
+                <div class="text-content">
+                    <h3>Ciclo For</h3>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">// Stampa numeri da 1 a 5
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Numero: " + i);
+}
+
+// For-each per array
+String[] nomi = {"Mario", "Luigi", "Peach"};
+for (String nome : nomi) {
+    System.out.println(nome);
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Sezione 5: Classi e Oggetti -->
+            <section class="course-section" id="classi">
+                <h2 class="section-title">Classi e Oggetti</h2>
+                
+                <div class="text-content">
+                    <p>Java è un linguaggio <strong>orientato agli oggetti</strong>. Una classe è un modello che definisce la struttura e il comportamento degli oggetti.</p>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">public class Persona {
+    // Attributi (variabili di istanza)
+    private String nome;
+    private int eta;
+    
+    // Costruttore
+    public Persona(String nome, int eta) {
+        this.nome = nome;
+        this.eta = eta;
+    }
+    
+    // Metodi
+    public void saluta() {
+        System.out.println("Ciao, sono " + nome);
+    }
+    
+    public int getEta() {
+        return eta;
+    }
+}
+
+// Utilizzo
+Persona p1 = new Persona("Marco", 30);
+p1.saluta();  // Output: Ciao, sono Marco</code></pre>
+                </div>
+
+                <div class="info-box warning">
+                    <h4>⚠️ Best Practice</h4>
+                    <p>Utilizza sempre l'incapsulamento: dichiara gli attributi come <code>private</code> e fornisci metodi <code>getter</code> e <code>setter</code> per accedervi.</p>
+                </div>
+            </section>
+
+            <!-- Sezione 6: Ereditarietà -->
+            <section class="course-section" id="ereditarieta">
+                <h2 class="section-title">Ereditarietà</h2>
+                
+                <div class="text-content">
+                    <p>L'ereditarietà permette a una classe di <em>ereditare</em> attributi e metodi da un'altra classe, promuovendo il riutilizzo del codice.</p>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">Java</span>
+                        <button class="copy-button">Copia</button>
+                    </div>
+                    <pre><code class="language-java">// Classe base (superclasse)
+public class Animale {
+    protected String nome;
+    
+    public Animale(String nome) {
+        this.nome = nome;
+    }
+    
+    public void mangia() {
+        System.out.println(nome + " sta mangiando");
+    }
+}
+
+// Classe derivata (sottoclasse)
+public class Cane extends Animale {
+    private String razza;
+    
+    public Cane(String nome, String razza) {
+        super(nome);  // Chiama il costruttore della superclasse
+        this.razza = razza;
+    }
+    
+    public void abbaia() {
+        System.out.println(nome + " fa: Bau Bau!");
+    }
+}
+
+// Utilizzo
+Cane rex = new Cane("Rex", "Labrador");
+rex.mangia();   // Metodo ereditato
+rex.abbaia();   // Metodo proprio</code></pre>
+                </div>
+            </section>
+        </div>
+
+        <footer class="course-footer">
+            <p>© 2025 Corso Java - Tutti i diritti riservati</p>
+        </footer>
+    </main>
+
+    <script src="../js/java.js"></script>
+</body>
+</html>
