@@ -1,51 +1,51 @@
 {
     "Lunedì": {
-        "ora1": "Educazione Fisica",
-        "ora2": "Educazione Fisica",
+        "ora1": "Italiano",
+        "ora2": "Italiano",
         "ora3": "Lab TPSIT",
-        "ora4": "Italiano",
-        "ora5": "LabTelecomunicazioni",
-        "ora6": "LabTelecomunicazioni",
+        "ora4": "Informatica",
+        "ora5": "LAB Telecomunicazioni",
+        "ora6": "LAB Telecomunicazioni",
         "ora7": "-",
         "ora8": "-"
     },
     "Martedì": {
-        "ora1": "Sistemi e Reti",
-        "ora2": "Italiano",
-        "ora3": "Matematica",
-        "ora4": "Sistemi e Reti",
-        "ora5": "Inglese",
-        "ora6": "Informatica",
-        "ora7": "-",
-        "ora8": "-"
+        "ora1": "Matematica",
+        "ora2": "Sistemi e Reti",
+        "ora3": "Italiano",
+        "ora4": "Sistemi e reti",
+        "ora5": "Educazione Fisica",
+        "ora6": "Educazione Fisica",
+        "ora7": "LAB Informatica",
+        "ora8": "LAB Informatica"
     },
     "Mercoledì": {
         "ora1": "Matematica",
         "ora2": "Storia",
-        "ora3": "Informatica",
+        "ora3": "LAB TPSIT",
         "ora4": "Matematica",
         "ora5": "Inglese",
         "ora6": "TPSIT",
-        "ora7": "Lab Sistemi e Reti",
-        "ora8": "Lab Sistemi e Reti"
+        "ora7": "-",
+        "ora8": "-"
     },
     "Giovedì": {
         "ora1": "Telecomunicazioni",
         "ora2": "Matematica",
-        "ora3": "Italiano",
+        "ora3": "Inglese",
         "ora4": "Italiano",
-        "ora5": "Religione",
+        "ora5": "Informatica",
         "ora6": "Informatica",
         "ora7": "-",
         "ora8": "-"
     },
     "Venerdì": {
-        "ora1": "Lab TPSIT",
+        "ora1": "Religione",
         "ora2": "Storia",
-        "ora3": "Lab Informatica",
-        "ora4": "Lab Informatica",
+        "ora3": "LAB Sistemi e Reti",
+        "ora4": "LAB Sistemi e Retia",
         "ora5": "Inglese",
-        "ora6": "Lab Informatica",
+        "ora6": "LAB Informatica",
         "ora7": "-",
         "ora8": "-"
     }
